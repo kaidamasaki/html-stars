@@ -1,0 +1,30 @@
+/* We need the stars to in reverse order. */
+.stars {
+  width: max-content;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+/* Hide the radio buttons. */
+.stars input {
+  position: absolute;
+  left: -100vw;
+}
+
+/* Hide the numbers. */
+.stars label {
+  color: transparent;
+}
+
+.stars label::before {
+  color: #c90f;
+  content: "☆";
+}
+
+.stars input:checked ~ label::before {
+  content: "★";
+}
+
+.stars input:focus + label::before {
+  color: #c908;
+}
